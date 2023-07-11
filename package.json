@@ -1,0 +1,26 @@
+{
+  "name": "notion-html-parser",
+  "version": "1.0.0",
+  "main": "src/notion-html-parser.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@notionhq/client": "^2.2.5"
+  },
+  "devDependencies": {
+    "open-cli": "^7.2.0",
+    "prettier": "^3.0.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
+  },
+  "scripts": {
+    "start": "yarn dev && yarn open",
+    "dev": "node ./dev/index.js",
+    "dev:watch": "node --watch ./dev/index.js",
+    "open": "open-cli ./dev/index.html -- 'google chrome'"
+  }
+}
