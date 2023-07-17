@@ -296,6 +296,6 @@ export default async (apiToken, pageId, head = '') => {
     const heading = await convertBlocks(title)
     const { results } = await getBlock(pageId)
     const body = await convertBlocks(results)
-    const html = `<html><head><title>${heading}</title>${head}</head><body><h1>${heading}</h1>${body}</body></html>`
+    const html = `<html lang='en'><head><title>${heading}</title>${head}</head><body><h1>${heading}</h1>${body}</body></html>`
     return html
 }

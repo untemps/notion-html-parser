@@ -8,6 +8,7 @@
     "@notionhq/client": "^2.2.5"
   },
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "open-cli": "^7.2.0",
     "prettier": "^3.0.0"
   },
@@ -21,6 +22,6 @@
     "start": "yarn dev && yarn open",
     "dev": "node ./dev/index.js",
     "dev:watch": "node --watch ./dev/index.js",
-    "open": "open-cli ./dev/index.html -- 'google chrome'"
+    "open": "start chrome %CD%/dev/index.html"
   }
 }
