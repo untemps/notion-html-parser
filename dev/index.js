@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs'
 import { configDotenv } from 'dotenv'
 
-import parse from '../src/notion-html-parser.js'
+import parse from '../src/index.js'
 
 configDotenv()
 

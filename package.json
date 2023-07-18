@@ -1,27 +1,36 @@
 {
-  "name": "notion-html-parser",
-  "version": "1.0.0",
-  "main": "src/notion-html-parser.js",
-  "license": "MIT",
-  "type": "module",
-  "dependencies": {
-    "@notionhq/client": "^2.2.5"
-  },
-  "devDependencies": {
-    "dotenv": "^16.3.1",
-    "open-cli": "^7.2.0",
-    "prettier": "^3.0.0"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true
-  },
-  "scripts": {
-    "start": "yarn dev && yarn open",
-    "dev": "node ./dev/index.js",
-    "dev:watch": "node --watch ./dev/index.js",
-    "open": "start chrome %CD%/dev/index.html"
-  }
+    "name": "notion-html-parser",
+    "version": "1.0.0",
+    "license": "MIT",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "dependencies": {
+        "@notionhq/client": "^2.2.5"
+    },
+    "devDependencies": {
+        "dotenv": "^16.3.1",
+        "open-cli": "^7.2.0",
+        "prettier": "^3.0.0"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    },
+    "scripts": {
+        "start": "bun dev:serve && bun dev:open",
+        "dev:serve": "bun ./dev/index.js",
+        "dev:watch": "bun --watch ./dev/index.js",
+        "dev:open": "start chrome %CD%/dev/index.html",
+        "generate": "bun build ./src/index.js --outdir ./dist --minify",
+        "test": "bun test --watch"
+    }
 }
